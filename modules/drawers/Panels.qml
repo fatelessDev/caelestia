@@ -1,7 +1,6 @@
 import "root:/services"
 import "root:/config"
 import "root:/modules/osd" as Osd
-import "root:/modules/notifications" as Notifications
 import "root:/modules/session" as Session
 import "root:/modules/launcher" as Launcher
 import "root:/modules/dashboard" as Dashboard
@@ -17,7 +16,6 @@ Item {
     required property Item bar
 
     readonly property Osd.Wrapper osd: osd
-    readonly property Notifications.Wrapper notifications: notifications
     readonly property Session.Wrapper session: session
     readonly property Launcher.Wrapper launcher: launcher
     readonly property Dashboard.Wrapper dashboard: dashboard
@@ -39,13 +37,6 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: session.width
-    }
-
-    Notifications.Wrapper {
-        id: notifications
-
-        anchors.top: parent.top
-        anchors.right: parent.right
     }
 
     Session.Wrapper {
